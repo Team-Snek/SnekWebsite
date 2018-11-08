@@ -28,7 +28,7 @@ namespace SnekWebsite.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your contact page. Hello!";
 
             return View();
         }
