@@ -6,6 +6,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SnekWebsite.Models
 {
+    //Contact Info Model
+
+
     public class Contact_Info
     {
         [Required(ErrorMessage ="Please enter your name")]
