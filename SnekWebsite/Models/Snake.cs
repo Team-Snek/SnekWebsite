@@ -14,6 +14,7 @@ namespace SnekWebsite.Models
         public string ownerName { get; set; }
         public string snakeBreed { get; set; }
         public string snakeAge { get; set; }
+        public string snakeTalk { get; set; }
         public string linkToPic { get; set; }
     }
 }
