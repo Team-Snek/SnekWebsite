@@ -32,8 +32,29 @@ namespace SnekWebsite.Controllers
 
         public ActionResult Snakes()
         {
-            AddSnakes();
+            if (liSnakes.Count == 0)
+            {
+                AddSnakes();
+            }
             ViewBag.SnakeList = liSnakes;
+
+            return View();
+        }
+
+        public ActionResult ShowSnake(int id)
+        {
+            //Iterate through list to find matching snake.
+            int iCount = 0;
+            foreach(Snake snek in liSnakes)
+            {
+                iCount++;
+                if(snek.snakeID == id)
+                {
+                    ViewBag.Snek = snek;
+                    break;
+                }
+            }
+            ViewBag.Count = iCount;
 
             return View();
         }
