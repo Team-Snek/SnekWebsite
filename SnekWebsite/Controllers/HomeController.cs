@@ -4,6 +4,7 @@
  11/8/2018
  */
 
+using SnekWebsite.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,20 @@ namespace SnekWebsite.Controllers
             ViewBag.Message = "Your contact page. Hello!";
 
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Contact(Contact_Info info)
+        {
+            if (ModelState.IsValid)
+            {
+                return View("Confirmation");
+            }
+            else
+            {
+                return View();
+            }
+            
         }
     }
 }
