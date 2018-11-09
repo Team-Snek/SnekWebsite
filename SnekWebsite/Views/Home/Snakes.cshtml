@@ -1,0 +1,14 @@
+﻿@using SnekWebsite.Models;
+@{
+    ViewBag.Title = "Snake List";
+
+}
+
+<h2>All Our Snakes</h2>
+
+<ul>
+    @foreach (Snake snek in ViewBag.SnakeList)
+    {
+        <li>@snek.snakeName</li>
+    }
+</ul>

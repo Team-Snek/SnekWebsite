@@ -15,21 +15,37 @@ namespace SnekWebsite.Controllers
 {
     public class HomeController : Controller
     {
+        //Create list of snake objects.
+        public List<Snake> liSnakes = new List<Snake>();
+
+        public void AddSnakes()
+        {
+            liSnakes.Add(new Snake(1, "Artemis", "Nate", "Corn snake", "4 years", "This girl is sassy, but super sweet!", "URL"));
+            liSnakes.Add(new Snake(2, "Athena", "Kelly", "Corn snake", "4 years", "This girl is soooo snuggly!", "URL"));
+            liSnakes.Add(new Snake(3, "Midas", "Nate & Kelly", "Corn snake", "1 year", "Tiny, cute butter noodle.", "URL"));
+        }
+
         public ActionResult Index()
         {
             return View();
         }
 
+        public ActionResult Snakes()
+        {
+            AddSnakes();
+            ViewBag.SnakeList = liSnakes;
+
+            return View();
+        }
+
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page. Hello!";
 
             return View();
         }
